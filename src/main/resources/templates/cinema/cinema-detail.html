@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detalle de cine</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/contact.css}"/>
+    <link rel="stylesheet" th:href="@{/css/appcinefilos.css}"/>
+</head>
+<body>
+<div th:replace="~{navbar :: navbar}"></div>
+
+<div class="container text-center">
+    <div class="row mt-5">
+        <h1 class="cinefilos-h1" th:text="${cinema.name}"></h1>
+        <div class="col">
+        </div>
+        <div class="col">
+            <div th:if="${error}">
+                <div class="alert alert-danger" role="alert">
+                    <p th:text="${error}"></p>
+                </div>
+                <a type="button" class="btn btn-primary" th:href="@{/cinemas}" role="button">Lista de cines</a>
+            </div>
+            <div class="card" th:if="${error} == null">
+                <img th:src="@{${cinema.image}}" class="card-img-top" th:alt="${cinema.name}"/>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="|Teléfono: ${cinema.phone}"></h5>
+                    <p class="card-text" th:text="|CIF: ${cinema.cif}"></p>
+                </div>
+
+                <h5 class="card-title">Salas</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"
+                        th:each="rooms: ${cinema.rooms}"
+                        th:text="|Sala ${rooms.roomNumber} ${rooms.film.title}">
+                    </li>
+                </ul>
+
+                <div class="card-footer">
+                    <a class="btn btn-outline-primary" title="Ver cines"
+                       th:href="@{/cinemas}" role="button">Cines</a>
+                    <a class="btn btn-outline-success" title="Editar cines"
+                       th:href="@{/cinemas/{id}/edit(id=${cinema.id})}"
+                       sec:authorize="isAuthenticated()" role="button">Editar</a>
+                    <button class="btn btn-outline-danger" title="Borrar cines"
+                            th:href="@{/cinemas/{id}/delete(id=${cinema.id})}"
+                       sec:authorize="isAuthenticated()" role="button">Borrar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+<!----------------------------- formulario de contacto ------------------------------------------->
+<div class="col"></div>
+<br>
+<div class="horizontal-padding vertical-padding">
+    <section class="contact" id="contact">
+        <h2 class="contact-title">Contacto</h2>
+        <div class="contact-details">
+            <div class="contact-details-group">
+                <p class="contact-label">Dirección</p>
+                <p class="contact-text" th:text="${cinema.address}"></p>
+            </div>
+            <div class="contact-details-group">
+                <p class="contact-label">Email</p>
+                <p class="contact-text" th:text="${cinema.email}"></p>
+            </div>
+            <div class="contact-details-group">
+                <p class="contact-text">
+                    Muchas gracias por contactar con nosotros, nos pondremos en contacto con usted
+                </p>
+            </div>
+        </div>
+        <form class="contact-form" name="contact" netlify>
+            <div class="contact-form-group">
+                <label for="name">Nombre</label>
+                <input required type="text" name="name" id="name">
+            </div>
+            <div class="contact-form-group">
+                <label for="email">Email</label>
+                <input required type="email" name="email" id="email">
+            </div>
+            <div class="contact-form-group">
+                <label for="message">Mensaje</label>
+                <textarea required name="message" id="message" rows="6"></textarea>
+            </div>
+            <button class="contact-form-btn" type="submit">Enviar</button>
+        </form>
+        <nav class="social">
+            <ul class="social-list">
+                <li>
+                    <a href="https://twitter.com/" target="_blank" role="button">
+                        <img src="/img/icons/twitter2.svg" alt="Twitter">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" role="button">
+                        <img src="/img/icons/facebook2.svg" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" target="_blank" role="button">
+                        <img src="/img/icons/instagram2.svg" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/" target="_blank" role="button">
+                        <img src="/img/icons/linkedin2.svg" alt="LinkedIn">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</div>
+
+<div th:replace="~{footer :: footer}"></div>
+</body>
+</html>
