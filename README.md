@@ -67,4 +67,8 @@ Para hacer login, todos los usuarios registrados cuentan con la contraseña: **6
 
 ## Licencia
 
-Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
+Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)  
+
+## Saber más
+
+- [Artículo informativo sobre la práctica en mi blog](https://javguerra.github.io/2023-03-17-cartelera-java-spring/)
