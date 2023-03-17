@@ -24,9 +24,11 @@ Además de los requisitos solicitados para el MVP, la app implementa:
 
 ### Estado de la aplicación
 
-La aplicación ha sido realizada en un plazo de cuatro semanas en las que, íbamos aplicando lo que aprendíamos por la mañana.
+La aplicación ha sido realizada en un plazo de cuatro semanas en las que, íbamos aplicando lo que aprendíamos por la mañana.  
 
-Si bien su estado es inconcluso, habida cuenta de que la planificación inicial preveía implementar relaciones entre las distintas pantallas de la App, el código resultante ha sido revisado y cumple con los contenidos impartidos en el curso.
+Si bien su estado es inconcluso, habida cuenta de que la planificación inicial preveía implementar relaciones entre las distintas pantallas de la App, el código resultante ha sido revisado y cumple con los contenidos impartidos en el curso.  
+
+Versión de la rama de desarrollo: revisión-javier.  
 
 ### Opciones de mejora
 
