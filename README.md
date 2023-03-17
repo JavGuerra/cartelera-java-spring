@@ -60,8 +60,11 @@ Para hacer login, todos los usuarios registrados cuentan con la contraseña: **6
 * **Dawid Lempicki**: Ha realizado la estructura de la entidad «room», el listado de películas y la presentación de la app.
 
 
-* **Pedro Rivas**: Ha realizado la gestión del repositorio, y las funcionalidades de las entidades de «cinema» y «room».
+* **Pedro Rivas**: Se ha encargado de la gestión del repositorio en GitHub, y las funcionalidades de las entidades de «cinema» y «room».
 
 
 * **Eduardo González**: Ha realizado el diseño CSS y las funcionalidades de la entidad de «film», la estructura de la entidad «user», y el listado de películas.
 
+## Licencia
+
+Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
