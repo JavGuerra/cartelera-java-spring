@@ -95,9 +95,8 @@ public class UserController {
             return "user/user-form";
         }
 
-        // Si el usuario ya existe, pero cambió el usuario o contraseña a otra que ya existía...
-        // TODO revisar
-        else if (userExist && (
+        // Si el usuario ya existe, pero se cambió su nombre de usuario o su correo a otra que ya existía...
+        if (userExist && (
                 ( existsByUsername && (user.getUsername() != oldUser.getUsername()) ) ||
                 ( existsByEmail && (user.getEmail() != oldUser.getEmail()) ) )) {
             model.addAttribute("error", "El usuario ya existe.");
