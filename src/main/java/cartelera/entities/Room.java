@@ -3,6 +3,7 @@ package cartelera.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -29,6 +30,7 @@ public class Room {
 
     private Boolean active;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate premiere;
 
     @ElementCollection
