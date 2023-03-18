@@ -53,8 +53,4 @@ public interface IRoomService {
      * @param id Identificador.
      */
     void deleteById(Long id);
-
-    // void deleteAllById(List<Long> ids);
-
-    // void saveAll(List<Room> rooms);
 }

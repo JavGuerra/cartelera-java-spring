@@ -70,18 +70,6 @@ public class RoomServiceImpl implements IRoomService {
         room.setFilm(null);
         roomRepo.deleteById(id);
     }
-
-//    @Override
-//    public void deleteAllById(List<Long> ids) {
-//        log.info("deleteById {}", ids);
-//        roomRepo.deleteAllById(ids);
-//    }
-//
-//    @Override
-//    public void saveAll(List<Room> rooms) {
-//        log.info("saveAll {}", rooms);
-//        roomRepo.saveAll(rooms);
-//    }
 }
 
 

@@ -25,7 +25,7 @@ public class FilmController {
     /**
      * Lista todas las películas.
      * @param model Modelo.
-     * @return Plantilla film-list,
+     * @return Plantilla film-list.
      */
     @GetMapping("/films")
     public String findAll(Model model) {

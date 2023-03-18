@@ -1,6 +1,7 @@
 package cartelera.entities.enums;
 
 public enum Classification {
+
     ALL_AGES("TP"),
     OLDER7("+7"),
     OLDER12("+12"),

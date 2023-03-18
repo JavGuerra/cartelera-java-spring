@@ -27,7 +27,7 @@ public class RoomController {
     /**
      * Lista todas las salas.
      * @param model Modelo.
-     * @return Plantilla rooms-list,
+     * @return Plantilla rooms-list.
      */
     @GetMapping("/rooms")
     public String findAll(Model model) {

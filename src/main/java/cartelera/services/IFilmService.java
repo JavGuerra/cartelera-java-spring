@@ -42,7 +42,5 @@ public interface IFilmService {
      */
     void deleteById(Long id);
 
-    // List<Film> findByIdWithGender(Long ids);
-
     // List<Film> findAllByGenders(String gender);
 }

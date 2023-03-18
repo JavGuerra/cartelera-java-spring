@@ -27,7 +27,7 @@ public class UserController {
     /**
      * Lista todos los usuarios.
      * @param model Modelo.
-     * @return Plantilla users-list,
+     * @return Plantilla users-list.
      */
     @GetMapping("/users")
     public String findAll(Model model) {

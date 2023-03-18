@@ -23,7 +23,7 @@ public class AddressController {
     /**
      * Lista todas las direcciones.
      * @param model Modelo.
-     * @return Plantilla addresses-list,
+     * @return Plantilla addresses-list.
      */
     @GetMapping("/addresses")
     public String findAll(Model model) {

@@ -39,6 +39,4 @@ public interface ICinemaService {
      * @param id Identificador.
      */
     void deleteById(Long id);
-
-    // Optional<Cinema> findByIdWithRooms(Long id);
 }

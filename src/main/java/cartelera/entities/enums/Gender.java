@@ -1,6 +1,7 @@
 package cartelera.entities.enums;
 
 public enum Gender {
+
     COMEDY("Comedia"),
     DRAMA("Drama"),
     ACTION("Acción"),
