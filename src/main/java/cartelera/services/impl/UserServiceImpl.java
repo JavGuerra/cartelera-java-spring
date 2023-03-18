@@ -49,10 +49,24 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public Optional<User> findByUsername(String username) {
+        log.info("findByUsername {}", username);
+        if (stringIsEmpty(username)) return Optional.empty();
+        return userRepo.findByUsername(username);
+    }
+
+    @Override
     public boolean existsByEmail(String email) {
         log.info("existsByEmail {}", email);
         if (stringIsEmpty(email)) return false;
         return userRepo.existsByEmail(email);
+    }
+
+    @Override
+    public Optional<User> findByEmail(String email) {
+        log.info("findByEmail {}", email);
+        if (stringIsEmpty(email)) return Optional.empty();
+        return userRepo.findByEmail(email);
     }
 
     public User save(User user) {

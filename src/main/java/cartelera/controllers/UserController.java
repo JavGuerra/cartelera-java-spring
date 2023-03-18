@@ -83,11 +83,14 @@ public class UserController {
     @PostMapping("users")
     public String save(Model model, @ModelAttribute User user) {
 
-        boolean userExist = userService.existsById(user.getId());
-        User oldUser = null;
-        if (userExist) oldUser = userService.findById(user.getId()).get();
-        boolean existsByUsername = userService.existsByUsername(user.getUsername());
-        boolean existsByEmail = userService.existsByEmail(user.getEmail());
+        Long id = user.getId();
+        String username = user.getUsername();
+        String email = user.getEmail();
+
+        boolean userExist = userService.existsById(id);
+        User oldUser = (userExist) ? userService.findById(id).get() : null;
+        boolean existsByUsername = userService.existsByUsername(username);
+        boolean existsByEmail = userService.existsByEmail(email);
 
         // Si el usuario es nuevo, pero ya existe el nombre de usuario o el correo...
         if (!userExist && (existsByUsername || existsByEmail)) {
@@ -95,16 +98,16 @@ public class UserController {
             return "user/user-form";
         }
 
+        Long idByUsername = (existsByUsername) ? userService.findByUsername(username).get().getId() : id;
+        Long idByEmail = (existsByEmail) ? userService.findByEmail(email).get().getId() : id;
+
         // Si el usuario ya existe, pero se cambió su nombre de usuario o su correo a otra que ya existía...
-        if (userExist && (
-                ( existsByUsername && (user.getUsername() != oldUser.getUsername()) ) ||
-                ( existsByEmail && (user.getEmail() != oldUser.getEmail()) ) )) {
+        if (userExist && ( (existsByUsername && (idByUsername != id)) || (existsByEmail && (idByEmail != id)) )) {
             model.addAttribute("error", "El usuario ya existe.");
             return "user/user-form";
         }
 
-        String oldPasswd = null;
-        if (userExist) oldPasswd = oldUser.getPassword();
+        String oldPasswd = (userExist) ? oldUser.getPassword() : null;
         String newPasswd = user.getPassword();
 
         // Permite cambiar contraseña

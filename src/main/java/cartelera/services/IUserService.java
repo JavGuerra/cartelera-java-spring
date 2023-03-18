@@ -35,11 +35,25 @@ public interface IUserService {
     boolean existsByUsername(String username);
 
     /**
+     * Obtiene un usuario por su nombre de usuario.
+     * @param username nombre de usuario.
+     * @return Opcionalmente, el usuario solicitado.
+     */
+    Optional<User> findByUsername(String username);
+
+    /**
      * Comprueba si existe un usuario por su correo electrónico.
      * @param email correo electrónico.
      * @return Verdadero si existe, falso en caso contrario.
      */
     boolean existsByEmail(String email);
+
+    /**
+     * Obtiene un usuario por su correo electrónico.
+     * @param email correo electrónico.
+     * @return Opcionalmente, el usuario solicitado.
+     */
+    Optional<User> findByEmail(String email);
 
     /**
      * Guarda un usuario.
