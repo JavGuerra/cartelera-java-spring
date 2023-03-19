@@ -14,18 +14,18 @@ public interface ICinemaService {
     List<Cinema> findAll();
 
     /**
-     * Obtiene una dirección por su ID.
-     * @param id Identificador.
-     * @return Opcionalmente, el cine solicitado.
-     */
-    Optional<Cinema> findById(Long id);
-
-    /**
      * Comprueba si existe un cine por su ID.
      * @param id Identificador.
      * @return Verdadero si existe, falso en caso contrario.
      */
     boolean existsById(Long id);
+
+    /**
+     * Obtiene una dirección por su ID.
+     * @param id Identificador.
+     * @return Opcionalmente, el cine solicitado.
+     */
+    Optional<Cinema> findById(Long id);
 
     /**
      * Guarda un cine.

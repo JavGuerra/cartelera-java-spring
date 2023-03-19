@@ -28,17 +28,17 @@ public class AddressServiceImpl implements IAddressService {
     }
 
     @Override
-    public Optional<Address> findById(Long id) {
-        log.info("findById {}", id);
-        if (invalidPosNumber(id)) return Optional.empty();
-        return addressRepo.findById(id);
-    }
-
-    @Override
     public boolean existsById(Long id) {
         log.info("existsById {}", id);
         if (invalidPosNumber(id)) return false;
         return addressRepo.existsById(id);
+    }
+
+    @Override
+    public Optional<Address> findById(Long id) {
+        log.info("findById {}", id);
+        if (invalidPosNumber(id)) return Optional.empty();
+        return addressRepo.findById(id);
     }
 
     @Override
@@ -69,16 +69,4 @@ public class AddressServiceImpl implements IAddressService {
             cinemaRepo.findByAddress_Id(id).setAddress(null);
         addressRepo.deleteById(id);
     }
-
-//    @Override
-//    public void deleteAllById(List<Long> ids) {
-//        log.info("deleteAllById {}", ids);
-//        addressRepo.deleteAllById(ids);
-//    }
-//
-//    @Override
-//    public void saveAll(List<Address> addresses) {
-//        log.info("saveAll {}", addresses);
-//        addressRepo.saveAll(addresses);
-//    }
 }

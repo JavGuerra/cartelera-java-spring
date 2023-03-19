@@ -32,17 +32,17 @@ public class CinemaServiceImpl implements ICinemaService {
     }
 
     @Override
-    public Optional<Cinema> findById(Long id) {
-        log.info("findById {}", id);
-        if (invalidPosNumber(id)) return Optional.empty();
-        return cinemaRepo.findById(id);
-    }
-
-    @Override
     public boolean existsById(Long id) {
         log.info("existsById {}", id);
         if (invalidPosNumber(id)) return false;
         return cinemaRepo.existsById(id);
+    }
+
+    @Override
+    public Optional<Cinema> findById(Long id) {
+        log.info("findById {}", id);
+        if (invalidPosNumber(id)) return Optional.empty();
+        return cinemaRepo.findById(id);
     }
 
     @Override

@@ -15,18 +15,18 @@ public interface IAddressService {
     List<Address> findAll();
 
     /**
-     * Obtiene una dirección por su ID.
-     * @param id Identificador.
-     * @return Opcionalmente, la dirección solicitada.
-     */
-    Optional<Address> findById(Long id);
-
-    /**
      * Comprueba si existe una dirección por su ID.
      * @param id Identificador.
      * @return Verdadero si existe, falso en caso contrario.
      */
     boolean existsById(Long id);
+
+    /**
+     * Obtiene una dirección por su ID.
+     * @param id Identificador.
+     * @return Opcionalmente, la dirección solicitada.
+     */
+    Optional<Address> findById(Long id);
 
     /**
      * Comprueba si existe el nombre de una ciudad en alguna dirección.

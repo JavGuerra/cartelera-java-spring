@@ -14,18 +14,18 @@ public interface IFilmService {
     List<Film> findAll();
 
     /**
-     * Obtiene una película por si ID.
-     * @param id Identificador.
-     * @return Opcionalmente, la película seleccionada.
-     */
-    Optional<Film> findById(Long id);
-
-    /**
      * Comprueba si existe una película por su ID.
      * @param id Identificador.
      * @return Verdadero si existe, falso en caso contrario.
      */
     boolean existsById(Long id);
+
+    /**
+     * Obtiene una película por si ID.
+     * @param id Identificador.
+     * @return Opcionalmente, la película seleccionada.
+     */
+    Optional<Film> findById(Long id);
 
     // List<Film> findAllByRoomsCinemaAddressCityIgnoreCase(String city);
 

@@ -14,18 +14,18 @@ public interface IRoomService {
     List<Room> findAll();
 
     /**
-     * Obtiene una sala por si ID.
-     * @param id Identificador.
-     * @return Opcionalmente, la sala indicada.
-     */
-    Optional<Room> findById(Long id);
-
-    /**
      * Cumprueba si existe una sala por su ID.
      * @param id Identificador.
      * @return Verdadero si existe, falso en caso contrario.
      */
     boolean existsById(Long id);
+
+    /**
+     * Obtiene una sala por si ID.
+     * @param id Identificador.
+     * @return Opcionalmente, la sala indicada.
+     */
+    Optional<Room> findById(Long id);
 
     /**
      * Obtiene la lista de salas de un cine por el ID del cine.

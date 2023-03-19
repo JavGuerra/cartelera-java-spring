@@ -29,17 +29,17 @@ public class FilmServiceImpl implements IFilmService {
     }
 
     @Override
-    public Optional<Film> findById(Long id) {
-        log.info("findById {}", id);
-        if (invalidPosNumber(id)) return Optional.empty();
-        return filmRepo.findById(id);
-    }
-
-    @Override
     public boolean existsById(Long id) {
         log.info("existsById {}", id);
         if (invalidPosNumber(id)) return false;
         return filmRepo.existsById(id);
+    }
+
+    @Override
+    public Optional<Film> findById(Long id) {
+        log.info("findById {}", id);
+        if (invalidPosNumber(id)) return Optional.empty();
+        return filmRepo.findById(id);
     }
 
 //    @Override

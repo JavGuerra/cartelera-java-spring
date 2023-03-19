@@ -14,18 +14,18 @@ public interface IUserService {
     List<User> findAll();
 
     /**
-     * Obtiene un usuario por su ID.
-     * @param id Identificador.
-     * @return Opcionalmente, el usuario solicitado.
-     */
-    Optional<User> findById(Long id);
-
-    /**
      * Comprueba si existe un usuario por si ID.
      * @param id Identificador.
      * @return Verdadero si existe, falso en caso contrario.
      */
     boolean existsById(Long id);
+
+    /**
+     * Obtiene un usuario por su ID.
+     * @param id Identificador.
+     * @return Opcionalmente, el usuario solicitado.
+     */
+    Optional<User> findById(Long id);
 
     /**
      * Comprueba si existe un usuario por el nombre de usuario.

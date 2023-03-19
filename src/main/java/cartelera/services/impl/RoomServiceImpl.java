@@ -27,17 +27,17 @@ public class RoomServiceImpl implements IRoomService {
     }
 
     @Override
-    public Optional<Room> findById(Long id) {
-        log.info("findById {}", id);
-        if (invalidPosNumber(id)) return Optional.empty();
-        return roomRepo.findById(id);
-    }
-
-    @Override
     public boolean existsById(Long id) {
         log.info("existsById {}", id);
         if (invalidPosNumber(id)) return false;
         return roomRepo.existsById(id);
+    }
+
+    @Override
+    public Optional<Room> findById(Long id) {
+        log.info("findById {}", id);
+        if (invalidPosNumber(id)) return Optional.empty();
+        return roomRepo.findById(id);
     }
 
     @Override

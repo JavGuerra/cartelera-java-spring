@@ -28,17 +28,17 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Optional<User> findById(Long id) {
-        log.info("findById {}", id);
-        if (invalidPosNumber(id)) return Optional.empty();
-        return userRepo.findById(id);
-    }
-
-    @Override
     public boolean existsById(Long id) {
         log.info("existsById {}", id);
         if (invalidPosNumber(id)) return false;
         return userRepo.existsById(id);
+    }
+
+    @Override
+    public Optional<User> findById(Long id) {
+        log.info("findById {}", id);
+        if (invalidPosNumber(id)) return Optional.empty();
+        return userRepo.findById(id);
     }
 
     @Override

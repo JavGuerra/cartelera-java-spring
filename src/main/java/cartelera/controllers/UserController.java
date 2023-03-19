@@ -88,7 +88,6 @@ public class UserController {
         String email = user.getEmail();
 
         boolean userExist = userService.existsById(id);
-        User oldUser = (userExist) ? userService.findById(id).get() : null;
         boolean existsByUsername = userService.existsByUsername(username);
         boolean existsByEmail = userService.existsByEmail(email);
 
@@ -103,11 +102,11 @@ public class UserController {
 
         // Si el usuario ya existe, pero se cambió su nombre de usuario o su correo a otra que ya existía...
         if (userExist && ( (existsByUsername && (idByUsername != id)) || (existsByEmail && (idByEmail != id)) )) {
-            model.addAttribute("error", "El usuario ya existe.");
+            model.addAttribute("error", "El nombre de usuario o el correo ya está en uso.");
             return "user/user-form";
         }
 
-        String oldPasswd = (userExist) ? oldUser.getPassword() : null;
+        String oldPasswd = (userExist) ? userService.findById(id).get().getPassword() : null;
         String newPasswd = user.getPassword();
 
         // Permite cambiar contraseña
