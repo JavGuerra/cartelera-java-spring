@@ -73,7 +73,7 @@ Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
 
 ## Calificación
 
-en el curso, así como en la práctica, ha obtenido una calificación de 10/10.
+En el curso, así como en la práctica, he obtenido una calificación de 10/10.
 
 ## Saber más
 
